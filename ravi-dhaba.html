@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi The Dhaba - Authentic North Indian Cuisine | Bhilai</title>
+    <meta name="description" content="Experience authentic North Indian dhaba-style cuisine at Ravi The Dhaba. Open 24/7, serving traditional recipes with love.">
+    <link rel="stylesheet" href="ravi-dhaba.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍛</span>
+                <span class="logo-text">Ravi The Dhaba</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Welcome to</p>
+            <h1 class="hero-title">Ravi The Dhaba</h1>
+            <p class="hero-tagline">Authentic Flavors in Bhilai</p>
+            <p class="hero-description">Experience the true taste of India with our traditional recipes, cooked with love on open flames.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#contact" class="btn btn-secondary">Visit Us</a>
+            </div>
+            <div class="hero-badge">
+                <span>🕐 Open 24/7</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Ravi The Dhaba Interior">
+                    </div>
+                    <div class="about-img-secondary">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400" alt="Chef cooking">
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="section-subtitle">Our Story</p>
+                    <h2 class="section-title">Legacy of <span class="text-gradient">Taste</span></h2>
+                    <p class="about-text">Located opposite Rungta College, Ravi The Dhaba has been the favorite stop for students and families alike. We bring the rustic charm of highway dhabas right to the heart of Bhilai.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Signature Dishes</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Smiles</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Fresh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <p class="section-subtitle center">Our Menu</p>
+            <h2 class="section-title center">Selected <span class="text-gradient">Favorites</span></h2>
+            
+            <div class="veg-toggle-container">
+                <label class="veg-toggle">
+                    <input type="checkbox" id="vegToggle" onchange="toggleVegMode()">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">🥬 Veg Only Mode</span>
+                </label>
+            </div>
+
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterCategory('all')">All</button>
+                <button class="category-btn" onclick="filterCategory('paneer')">Paneer</button>
+                <button class="category-btn" onclick="filterCategory('dal')">Dal</button>
+                <button class="category-btn" onclick="filterCategory('bread')">Breads</button>
+                <button class="category-btn" onclick="filterCategory('rice')">Rice</button>
+                <button class="category-btn" onclick="filterCategory('chinese')">Chinese</button>
+                <button class="category-btn nonveg-btn" onclick="filterCategory('nonveg')">Non-Veg (6 Items)</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                
+                <div class="menu-card veg" data-category="paneer">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/paneer butter masala.png" alt="Paneer Butter Masala"></div>
+                    <div class="menu-info">
+                        <h3>Paneer Butter Masala</h3>
+                        <p>Rich tomato gravy with soft paneer</p>
+                        <span class="price">₹220</span>
+                    </div>
+                </div>
+                <div class="menu-card veg" data-category="paneer">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/kadhai paneer.png" alt="Kadai Paneer"></div>
+                    <div class="menu-info">
+                        <h3>Kadai Paneer</h3>
+                        <p>Spicy paneer with bell peppers</p>
+                        <span class="price">₹230</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="dal">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/dal makhani.png" alt="Dal Makhani"></div>
+                    <div class="menu-info">
+                        <h3>Dal Makhani</h3>
+                        <p>Slow-cooked black lentils in butter</p>
+                        <span class="price">₹180</span>
+                    </div>
+                </div>
+                <div class="menu-card veg" data-category="dal">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/dal tadka.png" alt="Dal Tadka"></div>
+                    <div class="menu-info">
+                        <h3>Dal Tadka</h3>
+                        <p>Yellow lentils tempered with ghee</p>
+                        <span class="price">₹140</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="bread">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/butter naan.png" alt="Butter Naan"></div>
+                    <div class="menu-info">
+                        <h3>Butter Naan</h3>
+                        <p>Soft leavened bread brushed with butter</p>
+                        <span class="price">₹50</span>
+                    </div>
+                </div>
+                <div class="menu-card veg" data-category="bread">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/tandoori roti.png" alt="Tandoori Roti"></div>
+                    <div class="menu-info">
+                        <h3>Tandoori Roti</h3>
+                        <p>Whole wheat bread from clay oven</p>
+                        <span class="price">₹30</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="rice">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/veg biryani.png" alt="Veg Biryani"></div>
+                    <div class="menu-info">
+                        <h3>Veg Biryani</h3>
+                        <p>Aromatic rice with mixed vegetables</p>
+                        <span class="price">₹200</span>
+                    </div>
+                </div>
+                <div class="menu-card veg" data-category="rice">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/jeera rice.png" alt="Jeera Rice"></div>
+                    <div class="menu-info">
+                        <h3>Jeera Rice</h3>
+                        <p>Cumin flavored basmati rice</p>
+                        <span class="price">₹120</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="chinese">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/veg fried rice.png" alt="Veg Fried Rice"></div>
+                    <div class="menu-info">
+                        <h3>Veg Fried Rice</h3>
+                        <p>Wok-tossed rice with vegetables</p>
+                        <span class="price">₹160</span>
+                    </div>
+                </div>
+                <div class="menu-card veg" data-category="chinese">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/manchurian.png" alt="Manchurian"></div>
+                    <div class="menu-info">
+                        <h3>Veg Manchurian</h3>
+                        <p>Crispy vegetable balls in spicy sauce</p>
+                        <span class="price">₹180</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="snacks">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/samosa.png" alt="Samosa"></div>
+                    <div class="menu-info">
+                        <h3>Samosa (2 pcs)</h3>
+                        <p>Crispy potato-filled pastry</p>
+                        <span class="price">₹40</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="beverages">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/masala chai.png" alt="Masala Chai"></div>
+                    <div class="menu-info">
+                        <h3>Masala Chai</h3>
+                        <p>Spiced Indian tea with milk</p>
+                        <span class="price">₹30</span>
+                    </div>
+                </div>
+                <div class="menu-card veg" data-category="beverages">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/lassi.png" alt="Lassi"></div>
+                    <div class="menu-info">
+                        <h3>Sweet Lassi</h3>
+                        <p>Traditional yogurt-based drink</p>
+                        <span class="price">₹60</span>
+                    </div>
+                </div>
+
+                <div class="menu-card veg" data-category="desserts">
+                    <div class="menu-badge veg-badge">VEG</div>
+                    <div class="menu-img"><img src="images/gulab jamun.png" alt="Gulab Jamun"></div>
+                    <div class="menu-info">
+                        <h3>Gulab Jamun (2 pcs)</h3>
+                        <p>Deep-fried milk dumplings in syrup</p>
+                        <span class="price">₹60</span>
+                    </div>
+                </div>
+
+                <div class="menu-card nonveg" data-category="nonveg">
+                    <div class="menu-badge nonveg-badge">NON-VEG</div>
+                    <div class="menu-img"><img src="images/butter chicken.png" alt="Butter Chicken"></div>
+                    <div class="menu-info">
+                        <h3>Butter Chicken</h3>
+                        <p>Rich creamy tomato chicken curry</p>
+                        <span class="price">₹280</span>
+                    </div>
+                </div>
+                <div class="menu-card nonveg" data-category="nonveg">
+                    <div class="menu-badge nonveg-badge">NON-VEG</div>
+                    <div class="menu-img"><img src="images/chicken biryani.png" alt="Chicken Biryani"></div>
+                    <div class="menu-info">
+                        <h3>Chicken Biryani</h3>
+                        <p>Aromatic basmati rice with chicken</p>
+                        <span class="price">₹260</span>
+                    </div>
+                </div>
+                <div class="menu-card nonveg" data-category="nonveg">
+                    <div class="menu-badge nonveg-badge">NON-VEG</div>
+                    <div class="menu-img"><img src="images/tandoori chicken.png" alt="Tandoori Chicken"></div>
+                    <div class="menu-info">
+                        <h3>Tandoori Chicken</h3>
+                        <p>Roasted chicken from clay oven</p>
+                        <span class="price">₹300</span>
+                    </div>
+                </div>
+                <div class="menu-card nonveg" data-category="nonveg">
+                    <div class="menu-badge nonveg-badge">NON-VEG</div>
+                    <div class="menu-img"><img src="images/mutton rogan josh.png" alt="Mutton Rogan Josh"></div>
+                    <div class="menu-info">
+                        <h3>Mutton Rogan Josh</h3>
+                        <p>Kashmiri style tender lamb curry</p>
+                        <span class="price">₹350</span>
+                    </div>
+                </div>
+                <div class="menu-card nonveg" data-category="nonveg">
+                    <div class="menu-badge nonveg-badge">NON-VEG</div>
+                    <div class="menu-img"><img src="images/fish fry.png" alt="Fish Curry"></div>
+                    <div class="menu-info">
+                        <h3>Fish Curry</h3>
+                        <p>Spicy and tangy fresh fish curry</p>
+                        <span class="price">₹280</span>
+                    </div>
+                </div>
+                <div class="menu-card nonveg" data-category="nonveg">
+                    <div class="menu-badge nonveg-badge">NON-VEG</div>
+                    <div class="menu-img"><img src="images/chicken tikka.png" alt="Chicken Tikka"></div>
+                    <div class="menu-info">
+                        <h3>Chicken Tikka</h3>
+                        <p>Boneless spiced grilled chicken</p>
+                        <span class="price">₹240</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <p class="section-subtitle center">Gallery</p>
+            <h2 class="section-title center">Glimpses of <span class="text-gradient">Our Dhaba</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" alt="Indian food spread"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400" alt="Paneer dish"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400" alt="Curry dish"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400" alt="Dal dish"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" alt="Naan bread"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400" alt="Chicken dish"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400" alt="Restaurant interior"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400" alt="Chef cooking"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="section-subtitle">Get in Touch</p>
+                    <h2 class="section-title">Visit <span class="text-gradient">Ravi The Dhaba</span></h2>
+                    <p class="contact-text">We'd love to serve you! Drop by anytime - we're open 24/7 for your convenience.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h4>Location</h4>
+                                <a href="https://www.google.com/maps/search/Rungta+College+Bhilai" target="_blank" class="contact-link">
+                                    Opposite Rungta College,<br>
+                                    Bhilai, Chhattisgarh - 490023
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:kravi55144@gmail.com" class="contact-link">kravi55144@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕐</span>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Open 24/7, 365 Days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Rungta+College+Bhilai+Chhattisgarh&output=embed" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 16px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">🍛</span>
+                        <span class="logo-text">Ravi The Dhaba</span>
+                    </a>
+                    <p>Serving authentic North Indian highway cuisine since 1998. Experience the true taste of India with our traditional recipes.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p>📍 Opp. Rungta College, Bhilai - 490023</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ <a href="mailto:kravi55144@gmail.com">kravi55144@gmail.com</a></p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Sunday</p>
+                    <p class="highlight">24 Hours Open</p>
+                    <p>365 Days a Year</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Ravi The Dhaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Veg Only Toggle
+        function toggleVegMode() {
+            const vegToggle = document.getElementById('vegToggle');
+            const nonvegCards = document.querySelectorAll('.menu-card.nonveg');
+            const nonvegBtn = document.querySelector('.nonveg-btn');
+            
+            if (vegToggle.checked) {
+                nonvegCards.forEach(card => card.style.display = 'none');
+                if (nonvegBtn) nonvegBtn.style.display = 'none';
+            } else {
+                nonvegCards.forEach(card => card.style.display = 'block');
+                if (nonvegBtn) nonvegBtn.style.display = 'inline-block';
+            }
+            // Reset to 'All' when toggling to ensure view stays consistent
+            filterCategory('all');
+        }
+
+        // Category Filter
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.menu-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            const vegToggle = document.getElementById('vegToggle');
+            
+            // Remove active class from all buttons and add to the clicked one
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // Find the button that called this function and make it active
+            const activeBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(category));
+            if(activeBtn) activeBtn.classList.add('active');
+
+            cards.forEach(card => {
+                const isNonVeg = card.classList.contains('nonveg');
+                const cardCategory = card.getAttribute('data-category');
+                
+                // Logic: 
+                // 1. If Veg Mode is ON and item is Non-Veg -> HIDE
+                // 2. Else If Category is 'all' OR matches card category -> SHOW
+                // 3. Else -> HIDE
+                
+                if (vegToggle.checked && isNonVeg) {
+                    card.style.display = 'none';
+                } else if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
